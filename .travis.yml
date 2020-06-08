@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - openjdk14
+services:
+  - docker
+
+# start mongodb docker container
+before_install:
+  - docker-compose up
