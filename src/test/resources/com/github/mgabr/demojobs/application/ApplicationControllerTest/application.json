@@ -10,7 +10,8 @@
         "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
         "candidateName": "Candidate 1",
         "jobName": "Job 2",
-        "companyName": "Company 1"
+        "companyName": "Company 1",
+        "messages": []
       }
     ]
   }

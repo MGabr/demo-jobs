@@ -1,0 +1,40 @@
+[
+  {
+    "collectionName": "candidates",
+    "documents": [
+      {
+        "_class": "candidate",
+        "_id": { "$$OBJECT_ID":  "5ede73623134dbfff2beafb7" },
+        "email": "candidate3@gmail.com",
+        "password": "qwertz",
+        "name": "Best candidate",
+        "description": "",
+        "workExperience": [
+          {
+            "position": "Lead Manager",
+            "company": "Success Solutions",
+            "description": "Lead teams to success in multiple projects",
+            "from": { "$$DATE_TIME": "2018-01-01T00:00:00.000Z" },
+            "to": { "$$DATE_TIME": "2019-01-01T00:00:00.000Z" }
+          }
+        ],
+        "education": [
+          {
+            "degree": "Master Management",
+            "institution": "WU",
+            "description": "",
+            "from": { "$$DATE_TIME": "2018-01-01T00:00:00.000Z" },
+            "to": { "$$DATE_TIME": "2020-01-01T00:00:00.000Z" }
+          },
+          {
+            "degree": "Bachelor Management",
+            "institution": "WU",
+            "description": "",
+            "from": { "$$DATE_TIME": "2014-01-01T00:00:00.000Z" },
+            "to": { "$$DATE_TIME": "2017-01-01T00:00:00.000Z" }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -10,9 +10,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CandidateDTO {
+public class CandidateCreateDTO {
 
     private String email;
+    private String password;
     private String name;
     private String description;
     private List<WorkExperienceDTO> workExperience = new ArrayList<>();

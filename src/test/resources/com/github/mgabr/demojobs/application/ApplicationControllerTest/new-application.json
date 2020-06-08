@@ -4,13 +4,14 @@
     "documents": [
       {
         "_class": "application",
-        "_id": { "$$OBJECT_ID":  "", "comparator": "!=" },
+        "_id": { "$$OBJECT_ID":  null, "comparator": "!=" },
         "candidateId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
         "jobId": { "$$OBJECT_ID":  "5edd4c8c0645577afecb377f" },
         "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
         "candidateName": "Candidate 1",
         "jobName": "Job 2",
-        "companyName": "Company 1"
+        "companyName": "Company 1",
+        "messages": []
       }
     ]
   }

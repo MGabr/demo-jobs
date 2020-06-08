@@ -48,6 +48,7 @@ public class DocumentApplicationService implements ApplicationService {
         applicationDoc.setCandidateName(candidateDoc.getName());
         applicationDoc.setJobName(jobDoc.getName());
         applicationDoc.setCompanyName(companyDoc.getName());
+        applicationDoc.setMessages(new ArrayList<>());
 
         return applicationRepository.save(applicationDoc).getId().toString();
     }
@@ -78,9 +79,6 @@ public class DocumentApplicationService implements ApplicationService {
                 .findById(applicationId)
                 .orElseThrow(NotFoundException::new);
 
-        if (applicationDoc.getMessages() == null) {
-            applicationDoc.setMessages(new ArrayList<>());
-        }
         var messageIndex = applicationDoc.getMessages().size();
 
         var messageDoc = messageMapper.toDocument(message);
