@@ -1,0 +1,100 @@
+[
+  {
+    "collectionName": "candidates",
+    "documents": [
+      {
+        "_class": "candidate",
+        "_id": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
+        "name": "Candidate 1"
+      },
+      {
+        "_class": "candidate",
+        "_id": { "$$OBJECT_ID":  "5edd4c76273e08fae21fac96" },
+        "name": "Candidate 2"
+      }
+    ]
+  },
+  {
+    "collectionName": "companies",
+    "documents": [
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "name": "Company 1"
+      },
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5edd4c82dffb9273466d73ec" },
+        "name": "Company 2"
+      }
+    ]
+  },
+  {
+    "collectionName": "jobs",
+    "documents": [
+      {
+        "_class": "job",
+        "_id": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
+        "name": "Job 1"
+      },
+      {
+        "_class": "job",
+        "_id": { "$$OBJECT_ID":  "5edd4c8c0645577afecb377f" },
+        "name": "Job 2"
+      }
+    ]
+  },
+  {
+    "collectionName": "applications",
+    "documents": [
+      {
+        "_class": "application",
+        "_id": { "$$OBJECT_ID":  "5edd4c9889594017137b9b29" },
+        "candidateId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
+        "jobId": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "candidateName": "Candidate 1",
+        "jobName": "Job 1",
+        "companyName": "Company 1",
+        "messages": [
+          {
+            "_class": "applicationMessage",
+            "message": "Message 1",
+            "statusChange": "SENT",
+            "sentFromId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
+            "sentToId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+            "sentAt": { "$$DATE_TIME": "2020-06-07T22:35:30.000Z" }
+          },
+          {
+            "_class": "applicationMessage",
+            "message": "Message 2",
+            "statusChange": "SENT",
+            "sentFromId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+            "sentToId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
+            "sentAt": { "$$DATE_TIME": "2020-06-08T12:35:30.000Z" }
+          }
+        ]
+      },
+      {
+        "_class": "application",
+        "_id": { "$$OBJECT_ID":  "5edd8598c1d4ddbc32f8ae99" },
+        "candidateId": { "$$OBJECT_ID":  "5edd4c76273e08fae21fac96" },
+        "jobId": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "candidateName": "Candidate 2",
+        "jobName": "Job 1",
+        "companyName": "Company 1",
+        "messages": [
+          {
+            "_class": "applicationMessage",
+            "message": "Message 1",
+            "statusChange": "SENT",
+            "sentFromId": { "$$OBJECT_ID":  "5edd4c76273e08fae21fac96" },
+            "sentToId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+            "sentAt": { "$$DATE_TIME": "2020-06-07T23:15:30.000Z" }
+          }
+        ]
+      }
+    ]
+  }
+]
