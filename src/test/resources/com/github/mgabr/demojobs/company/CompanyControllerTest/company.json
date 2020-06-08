@@ -1,0 +1,15 @@
+[
+  {
+    "collectionName": "companies",
+    "documents": [
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5ede94835d6aa74ab2851cc2" },
+        "email": "company3@gmail.com",
+        "password": "pass",
+        "name": "Company 3",
+        "description": ""
+      }
+    ]
+  }
+]

@@ -26,8 +26,11 @@ public class ApplicationDocument {
     @Indexed
     private ObjectId companyId;
 
+    // names are saved redundantly for performance
+    // names can be stale, this is by choice to save the names at the time of the application
     private String candidateName;
     private String jobName;
     private String companyName;
+
     private List<ApplicationMessageDocument> messages;
 }

@@ -12,7 +12,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CompanyDocument {
 
     @Id
-    ObjectId id;
+    private ObjectId id;
 
-    String name;
+    private String email;
+    private String password;
+    private String name;
+    private String description;
 }
