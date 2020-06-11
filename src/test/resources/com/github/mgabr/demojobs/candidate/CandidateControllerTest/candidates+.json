@@ -1,0 +1,116 @@
+[
+  {
+    "collectionName": "users",
+    "documents": [
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edf60ec0004080aba7f7267" },
+        "email": "candidate1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_CANDIDATE"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
+        "email": "candidate2@gmail.com",
+        "password": "password",
+        "role": "ROLE_CANDIDATE"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5edf6111a87adf2b1261c5d1" },
+        "email": "candidate3@gmail.com",
+        "password": "userpass",
+        "role": "ROLE_CANDIDATE"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edd4c7c25e9eca1635a0ee7" },
+        "email": "company1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_COMPANY"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5ee1432e8370fa97bb6042b2" },
+        "email": "company2@gmail.com",
+        "password": "password",
+        "role": "ROLE_COMPANY"
+      }
+    ]
+  },
+  {
+    "collectionName": "candidates",
+    "documents": [
+      {
+        "_class": "candidate",
+        "_id": { "$$OBJECT_ID":  "5edf60ec0004080aba7f7267" },
+        "name": "Candidate 1",
+        "description": "",
+        "workExperience": [],
+        "education": []
+      },
+      {
+        "_class": "candidate",
+        "_id": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
+        "name": "Candidate 2",
+        "description": "",
+        "workExperience": [],
+        "education": [
+          {
+            "degree": "Bachelor Computer Science",
+            "institution": "TU",
+            "description": "",
+            "from": { "$$DATE_TIME": "2014-01-01T00:00:00.000Z" },
+            "to": { "$$DATE_TIME": "2017-01-01T00:00:00.000Z" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "collectionName": "companies",
+    "documents": [
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "name": "Company 1",
+        "description": ""
+      },
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5ee1432e8370fa97bb6042b2" },
+        "name": "Company 2",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "collectionName": "jobs",
+    "documents": [
+      {
+        "_class": "job",
+        "_id": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "name": "Job 1",
+        "description": "This is a great job at company 1"
+      }
+    ]
+  },
+  {
+    "collectionName": "applications",
+    "documents": [
+      {
+        "_class": "application",
+        "_id": { "$$OBJECT_ID":  "5ede3c8718758becc0bb5777" },
+        "candidateId": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
+        "jobId": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "candidateName": "Candidate 2",
+        "jobName": "Job 1",
+        "companyName": "Company 1",
+        "messages": []
+      }
+    ]
+  }
+]

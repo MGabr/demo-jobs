@@ -1,0 +1,14 @@
+[
+  {
+    "collectionName": "users",
+    "documents": [
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": null, "comparator": "!=" },
+        "email": "company2@gmail.com",
+        "password": { "$$": "password", "comparator": "!=" },
+        "role": "ROLE_COMPANY"
+      }
+    ]
+  }
+]

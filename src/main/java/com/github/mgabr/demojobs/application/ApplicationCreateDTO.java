@@ -11,5 +11,4 @@ public class ApplicationCreateDTO {
 
     private String candidateId;
     private String JobId;
-    private String companyId;
 }

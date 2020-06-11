@@ -12,7 +12,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class JobDocument {
 
     @Id
-    ObjectId id;
+    private ObjectId id;
 
-    String name;
+    private ObjectId companyId;
+
+    private String name;
+    private String description;
 }

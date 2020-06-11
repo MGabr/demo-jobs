@@ -10,8 +10,4 @@ import lombok.NoArgsConstructor;
 public class ApplicationMessageCreateDTO {
 
     private String message;
-
-    // TODO: sentFrom and sentTo from current user
-    private String sentFromId;
-    private String sentToId;
 }

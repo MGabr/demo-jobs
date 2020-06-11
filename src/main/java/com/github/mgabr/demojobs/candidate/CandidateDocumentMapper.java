@@ -8,7 +8,6 @@ import org.mapstruct.MappingTarget;
         uses = {WorkExperienceDocumentMapper.class, EducationDocumentMapper.class, ObjectIdMapper.class})
 public interface CandidateDocumentMapper {
 
-    CandidateDocument toDocument(CandidateCreateDTO dto);
-    CandidateDocument toDocument(CandidateDTO dto, @MappingTarget CandidateDocument document);
+    CandidateDocument toDocument(CandidateDTO dto);
     CandidateDTO toDTO(CandidateDocument document);
 }

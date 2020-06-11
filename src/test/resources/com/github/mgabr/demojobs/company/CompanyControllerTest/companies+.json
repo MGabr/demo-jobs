@@ -1,0 +1,65 @@
+[
+  {
+    "collectionName": "users",
+    "documents": [
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edf60ec0004080aba7f7267" },
+        "email": "company1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_COMPANY"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
+        "email": "company2@gmail.com",
+        "password": "password",
+        "role": "ROLE_COMPANY"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5edf6111a87adf2b1261c5d1" },
+        "email": "company3@gmail.com",
+        "password": "userpass",
+        "role": "ROLE_COMPANY"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edd4c7c25e9eca1635a0ee7" },
+        "email": "candidate1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_CANDIDATE"
+      }
+    ]
+  },
+  {
+    "collectionName": "companies",
+    "documents": [
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5edf60ec0004080aba7f7267" },
+        "name": "Company 1",
+        "description": ""
+      },
+      {
+        "_class": "company",
+        "_id": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
+        "name": "Company 2",
+        "description": ""
+      }
+    ]
+  },
+  {
+  "collectionName": "candidates",
+  "documents": [
+    {
+      "_class": "candidate",
+      "_id": { "$$OBJECT_ID":  "5edf60ec0004080aba7f7267" },
+      "name": "Candidate 1",
+      "description": "",
+      "workExperience": [],
+      "education": []
+    }
+  ]
+}
+]

@@ -1,4 +1,4 @@
-package com.github.mgabr.demojobs.company;
+package com.github.mgabr.demojobs.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyCreateDTO {
+public class UserCreateDTO {
 
     private String email;
     private String password;
-    private String name;
-    private String description;
+    private UserRole role;
 }

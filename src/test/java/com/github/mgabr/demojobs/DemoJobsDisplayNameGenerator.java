@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 
 public class DemoJobsDisplayNameGenerator {
 
-    static class ReplaceCamelCase extends DisplayNameGenerator.Standard {
+    public static class ReplaceCamelCase extends DisplayNameGenerator.Standard {
         public ReplaceCamelCase() {
         }
 

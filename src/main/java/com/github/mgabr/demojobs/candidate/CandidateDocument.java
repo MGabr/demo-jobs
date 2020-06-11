@@ -16,8 +16,6 @@ public class CandidateDocument {
     @Id
     private ObjectId id;
 
-    private String email;
-    private String password;
     private String name;
     private String description;
     private List<WorkExperienceDocument> workExperience;

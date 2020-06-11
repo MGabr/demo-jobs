@@ -1,5 +1,38 @@
 [
   {
+    "collectionName": "users",
+    "documents": [
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edd4c6c35367a32563ac42c" },
+        "email": "candidate1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_CANDIDATE"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5edd4c76273e08fae21fac96" },
+        "email": "candidate2@gmail.com",
+        "password": "password",
+        "role": "ROLE_CANDIDATE"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID": "5edd4c7c25e9eca1635a0ee7" },
+        "email": "company1@gmail.com",
+        "password": "1234",
+        "role": "ROLE_COMPANY"
+      },
+      {
+        "_class": "user",
+        "_id": { "$$OBJECT_ID":  "5ee1432e8370fa97bb6042b2" },
+        "email": "company2@gmail.com",
+        "password": "password",
+        "role": "ROLE_COMPANY"
+      }
+    ]
+  },
+  {
     "collectionName": "candidates",
     "documents": [
       {
@@ -20,12 +53,14 @@
       {
         "_class": "company",
         "_id": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
-        "name": "Company 1"
+        "name": "Company 1",
+        "description": ""
       },
       {
         "_class": "company",
-        "_id": { "$$OBJECT_ID":  "5edd4c82dffb9273466d73ec" },
-        "name": "Company 2"
+        "_id": { "$$OBJECT_ID":  "5ee1432e8370fa97bb6042b2" },
+        "name": "Company 2",
+        "description": ""
       }
     ]
   },
@@ -35,12 +70,16 @@
       {
         "_class": "job",
         "_id": { "$$OBJECT_ID":  "5edd4c87e1ba439a39a6408c" },
-        "name": "Job 1"
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "name": "Job 1",
+        "description": "This is a great job at company 1"
       },
       {
         "_class": "job",
         "_id": { "$$OBJECT_ID":  "5edd4c8c0645577afecb377f" },
-        "name": "Job 2"
+        "companyId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
+        "name": "Job 2",
+        "description": "This is a nice job at company 1"
       }
     ]
   },
@@ -62,7 +101,6 @@
             "message": "Message 1",
             "statusChange": "SENT",
             "sentFromId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
-            "sentToId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
             "sentAt": { "$$DATE_TIME": "2020-06-07T22:35:30.000Z" }
           },
           {
@@ -70,7 +108,6 @@
             "message": "Message 2",
             "statusChange": "SENT",
             "sentFromId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
-            "sentToId": { "$$OBJECT_ID":  "5edd4c6c35367a32563ac42c" },
             "sentAt": { "$$DATE_TIME": "2020-06-08T12:35:30.000Z" }
           }
         ]
@@ -90,7 +127,6 @@
             "message": "Message 1",
             "statusChange": "SENT",
             "sentFromId": { "$$OBJECT_ID":  "5edd4c76273e08fae21fac96" },
-            "sentToId": { "$$OBJECT_ID":  "5edd4c7c25e9eca1635a0ee7" },
             "sentAt": { "$$DATE_TIME": "2020-06-07T23:15:30.000Z" }
           }
         ]

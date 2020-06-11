@@ -7,7 +7,6 @@ import org.mapstruct.MappingTarget;
 @Mapper(componentModel = "spring", uses = {ObjectIdMapper.class})
 public interface CompanyDocumentMapper {
 
-    CompanyDocument toDocument(CompanyCreateDTO dto);
-    CompanyDocument toDocument(CompanyDTO dto, @MappingTarget CompanyDocument document);
+    CompanyDocument toDocument(CompanyDTO dto);
     CompanyDTO toDTO(CompanyDocument document);
 }

@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ApplicationDTO {
 
+    private String id;
     private String candidateId;
     private String JobId;
     private String companyId;
-
     private String candidateName;
     private String jobName;
     private String companyName;

@@ -1,5 +1,6 @@
 package com.github.mgabr.demojobs.company;
 
+import com.github.mgabr.demojobs.common.IdDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,9 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyDTO {
+public class CompanyDTO implements IdDTO {
 
-    private String email;
+    private String id;
     private String name;
     private String description;
 }

@@ -14,5 +14,4 @@ public class ApplicationMessageDTO {
     private String message;
     private LocalDateTime sentAt;
     private String sentFromId;
-    private String sentToId;
 }
