@@ -17,7 +17,7 @@ public class CandidateDocument {
     private ObjectId id;
 
     private String name;
-    private String description;
+    private List<String> skills;
     private List<WorkExperienceDocument> workExperience;
     private List<EducationDocument> education;
 }

@@ -6,7 +6,11 @@
         "_class": "candidate",
         "_id": { "$$OBJECT_ID":  "5edf6111a87adf2b1261c5d1" },
         "name": "Candidate 3",
-        "description": "",
+        "skills": [
+          "Java",
+          "Spring",
+          "MongoDB"
+        ],
         "workExperience": [
           {
             "position": "Lead Manager",

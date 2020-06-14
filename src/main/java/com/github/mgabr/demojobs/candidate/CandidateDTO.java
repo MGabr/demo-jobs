@@ -15,7 +15,7 @@ public class CandidateDTO implements IdDTO {
 
     private String id;
     private String name;
-    private String description;
+    private List<String> skills;
     private List<WorkExperienceDTO> workExperience = new ArrayList<>();
     private List<EducationDTO> education = new ArrayList<>();
 }

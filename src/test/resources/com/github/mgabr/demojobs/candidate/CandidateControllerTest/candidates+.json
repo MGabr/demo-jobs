@@ -46,7 +46,7 @@
         "_class": "candidate",
         "_id": { "$$OBJECT_ID":  "5edf60ec0004080aba7f7267" },
         "name": "Candidate 1",
-        "description": "",
+        "skills": [],
         "workExperience": [],
         "education": []
       },
@@ -54,7 +54,7 @@
         "_class": "candidate",
         "_id": { "$$OBJECT_ID":  "5edf60d2b4418b0f3fb714b6" },
         "name": "Candidate 2",
-        "description": "",
+        "skills": [],
         "workExperience": [],
         "education": [
           {

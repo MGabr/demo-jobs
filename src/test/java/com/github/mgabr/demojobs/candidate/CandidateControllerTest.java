@@ -52,13 +52,14 @@ public class CandidateControllerTest {
     @SeedWithDataset("candidates+.json")
     @AssertMatchesDatasets({@AssertMatchesDataset("candidates+.json"), @AssertMatchesDataset("candidate.json")})
     public void createOrUpdateShouldCreateCandidate() throws Exception {
+        var skills = List.of("Java", "Spring", "MongoDB");
         var workExperiences = List.of(new WorkExperienceDTO(
                 "Lead Manager", "Success Solutions", "", LocalDate.parse("2018-01-01"), LocalDate.parse("2019-01-01")
         ));
         var education = List.of(new EducationDTO(
                 "Bachelor Management", "WU", "", LocalDate.parse("2014-01-01"), LocalDate.parse("2017-01-01")
         ));
-        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", "", workExperiences, education);
+        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", skills, workExperiences, education);
         var request = put("/candidates/{candidateId}", "5edf6111a87adf2b1261c5d1")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(this.mapper.writeValueAsString(candidate))
@@ -72,6 +73,7 @@ public class CandidateControllerTest {
     @SeedWithDatasets({@SeedWithDataset("candidates+.json"), @SeedWithDataset("candidate.json")})
     @AssertMatchesDatasets({@AssertMatchesDataset("candidates+.json"), @AssertMatchesDataset("updated-candidate.json")})
     public void createOrUpdateShouldUpdateCandidate() throws Exception {
+        var skills = List.of("Java", "Spring", "JavaScript");
         var workExperiences = List.of(new WorkExperienceDTO(
                 "Lead Manager", "Success Solutions", "Lead teams to success in multiple projects", LocalDate.parse("2018-01-01"), LocalDate.parse("2019-01-01")
         ));
@@ -79,7 +81,7 @@ public class CandidateControllerTest {
                 new EducationDTO("Master Management", "WU", "", LocalDate.parse("2018-01-01"), LocalDate.parse("2020-01-01")),
                 new EducationDTO("Bachelor Management", "WU", "", LocalDate.parse("2014-01-01"), LocalDate.parse("2017-01-01"))
         );
-        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Best candidate", "", workExperiences, education);
+        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Best candidate", skills, workExperiences, education);
         var request = put("/candidates/{candidateId}", "5edf6111a87adf2b1261c5d1")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(this.mapper.writeValueAsString(candidate))
@@ -93,13 +95,14 @@ public class CandidateControllerTest {
     @SeedWithDataset("candidates+.json")
     @AssertMatchesDataset("candidates+.json")
     public void createOrUpdateWithAnotherCandidateShouldReturnForbidden() throws Exception {
+        var skills = List.of("Java", "Spring", "JavaScript");
         var workExperiences = List.of(new WorkExperienceDTO(
                 "Lead Manager", "Success Solutions", "", LocalDate.parse("2018-01-01"), LocalDate.parse("2019-01-01")
         ));
         var education = List.of(new EducationDTO(
                 "Bachelor Management", "WU", "", LocalDate.parse("2014-01-01"), LocalDate.parse("2017-01-01")
         ));
-        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", "", workExperiences, education);
+        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", skills, workExperiences, education);
         var request = put("/candidates/{candidateId}", "5edf6111a87adf2b1261c5d1")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(this.mapper.writeValueAsString(candidate))
@@ -113,13 +116,14 @@ public class CandidateControllerTest {
     @SeedWithDataset("candidates+.json")
     @AssertMatchesDataset("candidates+.json")
     public void createOrUpdateWithCompanyShouldReturnForbidden() throws Exception {
+        var skills = List.of("Java", "Spring", "JavaScript");
         var workExperiences = List.of(new WorkExperienceDTO(
                 "Lead Manager", "Success Solutions", "", LocalDate.parse("2018-01-01"), LocalDate.parse("2019-01-01")
         ));
         var education = List.of(new EducationDTO(
                 "Bachelor Management", "WU", "", LocalDate.parse("2014-01-01"), LocalDate.parse("2017-01-01")
         ));
-        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", "", workExperiences, education);
+        var candidate = new CandidateDTO("5edf6111a87adf2b1261c5d1", "Candidate 3", skills, workExperiences, education);
         var request = put("/candidates/{candidateId}", "5edf6111a87adf2b1261c5d1")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(this.mapper.writeValueAsString(candidate))
