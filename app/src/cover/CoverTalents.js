@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function CoverTalents() {
     return (
-        <main role="main" className="inner cover">
+        <React.Fragment>
             <h1 className="cover-heading">Looking for the perfect job?</h1>
             <p className="lead">
                 DemoJobs is the easy way to find a job.<br />
@@ -18,7 +18,7 @@ function CoverTalents() {
                     <Button variant="secondary" size="sm">Offering jobs?</Button>
                 </LinkContainer>
             </p>
-        </main>
+        </React.Fragment>
     )
 }
 

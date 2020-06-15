@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 function CoverCompanies() {
     return (
-        <main role="main" className="inner cover">
+        <React.Fragment>
             <h1 className="cover-heading">Looking for top talents?</h1>
             <p className="lead">
                 DemoJobs is the easy way to find talents.<br />
@@ -19,7 +19,7 @@ function CoverCompanies() {
                     <Button variant="secondary" size="sm">Looking for jobs?</Button>
                 </LinkContainer>
             </p>
-        </main>
+        </React.Fragment>
     )
 }
 
