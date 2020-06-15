@@ -81,7 +81,7 @@ class Talent extends Component {
         this.setState({ validation: validation });
         event.preventDefault();
         event.stopPropagation();
-        
+
         // TODO: why not working?
         // if (isValidated(validation)) {
             axios.put("/candidates/me", this.state.talent, config)
