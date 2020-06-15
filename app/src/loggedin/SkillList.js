@@ -13,6 +13,7 @@ class SkillList extends PureComponent {
             if (sAdd) {
                 this.props.onChange([ ...this.props.skills, sAdd ]);
             }
+            event.target.textContent = "";
         }
     };
 
