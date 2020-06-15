@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./login.css";
+import "./no-round.scss";
 import { userContext, userValidator } from "../userContext";
 
 class Registration extends Component {
