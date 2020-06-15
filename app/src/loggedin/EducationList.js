@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 
 const educationListValidator = (data) => {
-    return Object.fromEntries(Object.keys(data).map(idx => [idx, educationValidator(data[idx])]));
+    return { ...Object.keys(data).map(idx => [idx, educationValidator(data[idx])]) };
 };
 
 class EducationList extends PureComponent {

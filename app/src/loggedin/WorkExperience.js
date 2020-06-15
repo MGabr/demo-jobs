@@ -24,9 +24,21 @@ validate.extend(validate.validators.datetime, {
 const constraints = {
     position: { presence: {allowEmpty: false} },
     company: { presence: {allowEmpty: false} },
-    from: { datetime: true },
-    to: { datetime: true }
+    from: {
+        datetime: {
+            latest: moment(),
+            message: "has to be before now"
+        }
+    },
+    to: {
+        datetime: {
+            latest: moment(),
+            message: "has to be before now"
+        }
+    }
 };
+
+const isValidDate = (date, selectedDate) => date && date.isBefore(moment());
 
 const workExperienceValidator = (data) => validate(data, constraints, { fullMessages: false });
 
@@ -48,13 +60,17 @@ class WorkExperience extends PureComponent {
         this.props.onChange(eChanged);
     };
 
-    onRemove = this.props.onRemove;
+    onRemove = (event) => {
+        event.preventDefault();
+        this.props.onRemove();
+    };
 
     onStartEdit = () => {
         this.setState({ edit: true });
     };
 
-    onFinishEdit = () => {
+    onFinishEdit = (event) => {
+        event.preventDefault();
         const validation = workExperienceValidator(this.props.workExperience);
         if (!validation) {
             this.setState({ edit: false });
@@ -100,6 +116,7 @@ class WorkExperience extends PureComponent {
                                               className: validation?.to ? "form-control is-invalid" : "form-control"
                                           }}
                                           dateFormat={dateFormat}
+                                          isValidDate={isValidDate}
                                           viewMode="months"
                                           closeOnSelect="true"/>
                                 <Form.Control.Feedback type="invalid">{validation?.from}</Form.Control.Feedback>
@@ -115,6 +132,7 @@ class WorkExperience extends PureComponent {
                                               className: validation?.to ? "form-control is-invalid" : "form-control"
                                           }}
                                           dateFormat={dateFormat}
+                                          isValidDate={isValidDate}
                                           viewMode="months"
                                           closeOnSelect="true"/>
                                 <Form.Control.Feedback type="invalid">{validation?.to}</Form.Control.Feedback>
@@ -130,6 +148,7 @@ class WorkExperience extends PureComponent {
                                           className="text-muted form-control-sm"/>
                         </Form.Group>
                         <Button variant="link" onClick={this.onFinishEdit}>Finish editing</Button>
+                        <Button variant="link" onClick={this.onRemove}>Remove</Button>
                     </Card.Header>
                 </Card>
             </Form>

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import SkillList from "./SkillList";
 import axios from "axios";
-import {EducationList} from "./EducationList";
+import { EducationList, educationListValidator } from "./EducationList";
 
 const constraints = {
     name: { presence: {allowEmpty: false} }
@@ -15,23 +15,18 @@ const talentValidator = (data) => {
     const validation = validate(data, constraints, { fullMessages: false });
     return {
         ...validation,
-        workExperience: workExperienceListValidator(data.workExperience)
+        workExperience: workExperienceListValidator(data.workExperience),
+        education: educationListValidator(data.education)
     }
 };
 
 const deepUndefinedSearch = (obj) => (
-    obj instanceof Object && obj.constructor === Object ?
-        Object.keys(obj)
-            .map(
-                (key) => obj[key] instanceof Array ?
-                    obj[key].map((o) =>
-
-                        deepUndefinedSearch(o)).filter((o) => !o).length === 0 :
-                    obj[key] === undefined
-            )
-            .filter((o) => !o)
-            .length === 0 :
-        obj === undefined
+    obj instanceof Object && obj.constructor === Object
+        ? Object.keys(obj).map((key) =>
+            obj[key] instanceof Array
+                ? obj[key].map((o) => deepUndefinedSearch(o)).filter((o) => !o).length === 0
+                : obj[key] === undefined).filter((o) => !o).length === 0
+        : obj === undefined
 );
 
 const isValidated = (validation) => deepUndefinedSearch(validation);
@@ -86,12 +81,14 @@ class Talent extends Component {
         this.setState({ validation: validation });
         event.preventDefault();
         event.stopPropagation();
-        if (isValidated(validation)) {
+        
+        // TODO: why not working?
+        // if (isValidated(validation)) {
             axios.put("/candidates/me", this.state.talent, config)
                 .catch(() => {
                     // TODO: error message from server
                 });
-        }
+        //}
     };
 
     render() {

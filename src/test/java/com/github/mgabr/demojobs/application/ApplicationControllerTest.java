@@ -7,11 +7,13 @@ import com.github.mgabr.demojobs.fixes.security.WithSecurityContextTestExecution
 import com.github.mgabr.demojobs.fixes.security.WithUserDetails;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mongounit.*;
+import org.mongounit.AssertMatchesDataset;
+import org.mongounit.AssertMatchesDatasets;
+import org.mongounit.SeedWithDataset;
+import org.mongounit.SeedWithDatasets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.TestExecutionEvent;
 import org.springframework.test.context.TestExecutionListeners;
@@ -27,8 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith({SpringExtension.class})
-@SpringBootTest
-@Import(DemoJobsTestConfiguration.class)
+@SpringBootTest(classes = DemoJobsTestConfiguration.class)
 @AutoConfigureMockMvc
 @MongoUnitTest
 @TestExecutionListeners(  // fixed version of @WithUserDetails
