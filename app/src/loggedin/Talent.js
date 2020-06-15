@@ -20,14 +20,17 @@ const talentValidator = (data) => {
     }
 };
 
-const deepUndefinedSearch = (obj) => (
-    obj instanceof Object && obj.constructor === Object
-        ? Object.keys(obj).map((key) =>
+const deepUndefinedSearch = (obj) => {
+    if (obj instanceof Object && obj.constructor === Object) {
+        return Object.keys(obj).map((key) =>
             obj[key] instanceof Array
                 ? obj[key].map((o) => deepUndefinedSearch(o)).filter((o) => !o).length === 0
-                : obj[key] === undefined).filter((o) => !o).length === 0
-        : obj === undefined
-);
+                : deepUndefinedSearch(obj[key])
+        ).filter((o) => !o).length === 0
+    } else {
+        return obj === undefined;
+    }
+};
 
 const isValidated = (validation) => deepUndefinedSearch(validation);
 
@@ -78,17 +81,17 @@ class Talent extends Component {
 
     onSubmit = (event) => {
         const validation = talentValidator(this.state.talent);
-        this.setState({ validation: validation });
+        console.log(validation);
+        this.setState({ validation: { ...validation } });
         event.preventDefault();
         event.stopPropagation();
 
-        // TODO: why not working?
-        // if (isValidated(validation)) {
+        if (isValidated(validation)) {
             axios.put("/candidates/me", this.state.talent, config)
                 .catch(() => {
                     // TODO: error message from server
                 });
-        //}
+        }
     };
 
     render() {

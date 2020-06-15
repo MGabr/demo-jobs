@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 
 const workExperienceListValidator = (data) => {
-    return { ...Object.keys(data).map(idx => [idx, workExperienceValidator(data[idx])]) };
+    return Object.fromEntries(Object.keys(data).map(idx => [idx, workExperienceValidator(data[idx])]));
 };
 
 class WorkExperienceList extends PureComponent {
